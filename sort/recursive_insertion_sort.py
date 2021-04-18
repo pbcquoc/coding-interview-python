@@ -1,4 +1,5 @@
 """
+Sắp sếp cuối về trước
 """
 def insertion_sort(arr, n):
     if n == 1:
