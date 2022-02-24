@@ -16,7 +16,7 @@ def cycle_sort(arr):
 
         arr[pos], item = item, arr[pos]
         writes += 1
-
+        print(pos, item)
         while pos != cycle_start:
             pos = cycle_start
             for i in range(cycle_start + 1, len(arr)):
@@ -28,11 +28,11 @@ def cycle_sort(arr):
 
             arr[pos], item = item, arr[pos]
             writes += 1
-
-
+            print(pos, item)
+        break
     return writes
 
-arr = [1, 8, 3, 9, 10, 10, 2, 4 ]
+arr = [2, 4, 5, 1, 3]
 cycle_sort(arr)
 print(arr)
 
