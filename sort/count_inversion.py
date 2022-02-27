@@ -40,5 +40,29 @@ def mergesort(arr):
     
     return inv_count
 
-arr = [1, 20, 6, 4, 5]
-print(mergesort(arr))
+from heapq import heappush, heappop
+from bisect import bisect, insort
+def count_inversion(arr):
+    N = len(arr)
+    if N <= 1:
+        return 0
+    
+    sort_list = []
+    result = 0
+
+    for i,v in enumerate(arr):
+        heappush(sort_list, (v, i))
+
+    x = []
+    while sort_list:
+        v, i = heappop(sort_list)
+        y = bisect(x, i)
+        print(x, i, y, i - y)
+
+        result += i - y
+        insort(x, i)
+    return result
+
+
+arr = [1, 5, 3]
+print(count_inversion(arr))
