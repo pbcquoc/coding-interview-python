@@ -31,6 +31,24 @@ def count_pairs(arr, k):
     
     return count
 
+def count_pairs_with_sorting(arr, k):
+    count = 0
+    arr.sort()
+
+    l, r = 0, 0
+    while r >= l and r < len(arr):
+        diff = arr[r] - arr[l]
+        if diff == k:
+            print(arr[l], arr[r])
+
+            r += 1
+            l += 1
+        elif diff < k:
+            r += 1
+        else:
+            l += 1
+
+
 arr = [1, 5, 3, 4, 2]
-k = 3
-print(count_pairs(arr, k))
+k = 0
+print(count_pairs_with_sorting(arr, k))
