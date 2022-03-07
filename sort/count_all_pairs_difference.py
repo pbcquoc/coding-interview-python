@@ -52,3 +52,4 @@ def count_pairs_with_sorting(arr, k):
 arr = [1, 5, 3, 4, 2]
 k = 0
 print(count_pairs_with_sorting(arr, k))
+
