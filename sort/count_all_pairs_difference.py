@@ -49,7 +49,33 @@ def count_pairs_with_sorting(arr, k):
             l += 1
 
 
-arr = [1, 5, 3, 4, 2]
+def binary_search(arr, x, low):
+    high = len(arr)  - 1
+    ans = len(arr)
+    while low <= high:
+        mid = (low+high)//2
+        if arr[mid] >= x:
+            high = mid -1
+            ans = mid
+        else:
+            low = mid + 1
+
+    return ans
+
+
+def count_pairs_with_bs(arr, k):
+    count = 0
+    arr.sort()
+    N = len(arr)
+    for i in range(N):
+        X = binary_search(arr, arr[i] + k, i + 1)
+        if X != N:
+            Y = binary_search(arr, arr[i] + k + 1, i +1)
+            count += Y - X
+
+    return count
+
+arr = [ 1, 3, 5, 8, 6, 4, 6 ]
 k = 0
-print(count_pairs_with_sorting(arr, k))
+print(count_pairs_with_bs(arr, k))
 
