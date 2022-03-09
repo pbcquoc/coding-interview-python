@@ -4,7 +4,7 @@ def count_sort(arr, n, exp):
 
     for i in range(n):
         count[(arr[i]//exp) % n] += 1
-
+        print(arr[i], (arr[i]//exp) % n)
     for i in range(1, n):
         count[i] += count[i-1]
 
