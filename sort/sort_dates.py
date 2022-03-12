@@ -9,7 +9,7 @@ def count_sort(arr, q, n):
     max_ele = get_max(arr, q)
     p = 1
     
-    while max_ele > 1:
+    while max_ele > 0:
         count = [0]*10
         output = [[0, 0, 0] for _ in range(n)]
 
@@ -19,7 +19,6 @@ def count_sort(arr, q, n):
         for i in range(1, 10):
             count[i] += count[i-1]
         
-        print(count)
         for i in range(n):
             output[count[(arr[i][q]//p)%10]-1] = arr[i]
             count[(arr[i][q]//p)%10] -= 1
@@ -27,14 +26,15 @@ def count_sort(arr, q, n):
         
         for i in range(n):
             arr[i] = output[i]
+
         p *= 10
-        max_ele /= p
+        max_ele = max_ele//10
     
 
 def sort(arr, n):
     count_sort(arr, 0, n)
-    count_sort(arr, 1, n)
-    count_sort(arr, 2, n)
+#    count_sort(arr, 1, n)
+#    count_sort(arr, 2, n)
 
 arr = [[ 20, 1, 2014 ],[ 25, 3, 2010 ],[ 3, 12, 2000 ],[ 18, 11, 2000 ],[ 19, 4, 2015 ],[ 9, 7, 2005 ]]
 sort(arr, len(arr))
