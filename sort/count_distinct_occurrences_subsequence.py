@@ -34,7 +34,6 @@ def distinct_occurrence_dp(s, t):
     return mat[m][n]
 
 
-
 S = 'geeksforgeeks'
 T = 'ge'
 
