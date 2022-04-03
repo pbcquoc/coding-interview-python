@@ -26,5 +26,8 @@ def min_swaps(arr):
 
     return ans
 
+def min_swaps():
+    pass
+
 arr = [1, 5, 4, 3, 2]
 print(min_swaps(arr))
