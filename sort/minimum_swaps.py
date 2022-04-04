@@ -26,8 +26,21 @@ def min_swaps(arr):
 
     return ans
 
-def min_swaps():
-    pass
+def min_swaps(arr):
+    n = len(arr)
 
-arr = [1, 5, 4, 3, 2]
+    tmp = sorted(arr)
+    
+    ans = 0
+
+    for i in range(n):
+        if arr[i] != tmp[i]:
+            ans += 1
+        
+            j = arr.index(tmp[i])
+            arr[i], arr[j] = arr[j], arr[i]
+
+    return ans
+
+arr = [101, 758, 315, 730, 472, 619, 460, 479]
 print(min_swaps(arr))
