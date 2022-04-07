@@ -42,5 +42,5 @@ def min_swaps(arr):
 
     return ans
 
-arr = [101, 758, 315, 730, 472, 619, 460, 479]
+arr = [1, 20, 6, 4, 5]
 print(min_swaps(arr))
