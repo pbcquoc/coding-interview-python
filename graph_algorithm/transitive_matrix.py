@@ -29,7 +29,6 @@ class Graph:
     def transitiveClosure(self):
         for i in range(self.V):
             self.DFSUtil(i, i)
-
         print(self.tc)
 
 g = Graph(4)
