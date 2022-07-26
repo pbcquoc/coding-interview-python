@@ -22,7 +22,20 @@ def BFS(a, b, target):
         m[(u[0], u[1])] = 1
 
         if u[0] == target or u[1] == target:
+            isSolvable = True
 
+            if (u[0] == target):
+                if (u[1] != 0):
+                    path.append([u[0], 0])
+            else:
+                if (u[0] != 0):
+                    path.append([0, u[1]])
+
+            sz = len(path)
+            for i in range(sz):
+                print("(", path[i][0], ",", path[i][1], ")")
+                 
+            break
 
 Jug1, Jug2, target = 4, 3, 2
 BFS(Jug1, Jug2, target)
